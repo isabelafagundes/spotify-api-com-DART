@@ -7,10 +7,16 @@ Perfil do Usuário: Após o login, é possível acessar informações detalhadas
 Principais Faixas: O servidor retorna as principais faixas do usuário, proporcionando uma experiência personalizada.
 
 ### Como Executar
-Clone este repositório: git clone link_do_seu_repositorio
+Clone este repositório: git clone "https://github.com/isabelafagundes/spotify-api-com-DART.git"
+
 Navegue até o diretório do projeto: cd nome_do_seu_projeto
+
 Instale as dependências: dart pub get
+
 Execute o servidor: dart run server.dart
+
 Certifique-se de ter o Dart SDK instalado em sua máquina.
+
+#
 
 Aproveite o uso da API do Spotify com Dart! 🎶
