@@ -34,7 +34,8 @@ class Rotas {
 
     router.get('/faixas', (Request request) async {
       List<Faixa> faixas = await usuarioComponent.obterPrincipaisFaixas(request);
-      String response = jsonEncode(faixas.map((e) => e.paraMapa()));
+      List<Map<String, dynamic>> faixasAsMap = faixas.map((e) => e.paraMapa()).toList();
+      String response = jsonEncode(faixasAsMap);
       return Response.ok(response, headers: {...Header.JSON.header, ...Header.CORS.header});
     });
 

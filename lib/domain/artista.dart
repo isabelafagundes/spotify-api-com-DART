@@ -2,9 +2,9 @@ import 'package:spotify_api_repo/domain/imagem.dart';
 
 class Artista {
   final String _nome;
-  final List<String> _generos;
+  final List<String>? _generos;
   final String _id;
-  final List<Imagem> _imagens;
+  final List<Imagem>? _imagens;
 
   Artista(
     this._nome,
@@ -15,9 +15,9 @@ class Artista {
 
   factory Artista.criar(
     String nome,
-    List<String> generos,
+    List<String>? generos,
     String id,
-    List<Imagem> imagens,
+    List<Imagem>? imagens,
   ) {
     return Artista(
       nome,
@@ -27,11 +27,11 @@ class Artista {
     );
   }
 
-  List<Imagem> get imagens => _imagens;
+  List<Imagem>? get imagens => _imagens;
 
   String get id => _id;
 
-  List<String> get generos => _generos;
+  List<String>? get generos => _generos;
 
   String get nome => _nome;
 
@@ -40,7 +40,7 @@ class Artista {
       "id": _id,
       "generos": _generos,
       "nome": _nome,
-      "imagens": _imagens.map((e) => e.paraMapa()),
+      "imagens": _imagens != null ? _imagens!.map((e) => e.paraMapa()).toList() : null,
     };
   }
 
@@ -49,7 +49,9 @@ class Artista {
       artistaAsMap['name'],
       artistaAsMap['genres'],
       artistaAsMap['id'],
-      (artistaAsMap['images'] as List).map((e) => Imagem.carregarDeMapa(e)).toList(),
+      artistaAsMap['images'] != null
+          ? (artistaAsMap['images'] as List).map((e) => Imagem.carregarDeMapa(e)).toList()
+          : null,
     );
   }
 }

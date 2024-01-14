@@ -1,5 +1,8 @@
+import 'package:logging/logging.dart';
 import 'package:shelf/shelf.dart';
 import 'package:spotify_api_repo/application/service/usuario.service.dart';
+import 'package:spotify_api_repo/application/use_case/exceptions/usuario_nao_encontrado.exception.dart';
+import 'package:spotify_api_repo/domain/spotify/spotify_api.dart';
 import 'package:spotify_api_repo/domain/faixa.dart';
 import 'package:spotify_api_repo/domain/usuario.dart';
 import 'package:spotify_api_repo/infrastructure/service/log.service.dart';

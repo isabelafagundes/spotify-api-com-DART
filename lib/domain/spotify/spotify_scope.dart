@@ -1,3 +1,5 @@
+import 'dart:io';
+
 enum SpotifyScope {
   PRIVATE('user-read-private'),
   EMAIL('user-read-email'),

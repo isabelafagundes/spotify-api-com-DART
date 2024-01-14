@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:cookie_jar/cookie_jar.dart';
+import 'package:logging/logging.dart';
 import 'package:shelf/shelf.dart';
 import 'package:spotify_api_repo/application/service/usuario.service.dart';
 import 'package:spotify_api_repo/application/use_case/exceptions/bad_oauth_request.exception.dart';
@@ -11,6 +12,7 @@ import 'package:spotify_api_repo/application/use_case/exceptions/usuario_nao_enc
 import 'package:spotify_api_repo/domain/spotify/spotify_api.dart';
 import 'package:spotify_api_repo/domain/faixa.dart';
 import 'package:spotify_api_repo/domain/usuario.dart';
+import 'package:spotify_api_repo/environment.dart';
 import 'package:spotify_api_repo/infrastructure/service/log.service.dart';
 import 'package:spotify_api_repo/infrastructure/service/cookie_jar.service.dart';
 import 'package:http/http.dart' as http;
@@ -61,7 +63,7 @@ class UsuarioSpotifyService extends UsuarioService {
 
   List<Faixa> _obterPrincipaisFaixas(http.Response response) {
     Map<String, dynamic> faixasAsMap = jsonDecode(response.body);
-    List<Faixa> faixas = (faixasAsMap as List).map((e) => Faixa.carregarDeMapa(e)).toList();
+    List<Faixa> faixas = (faixasAsMap['items'] as List).map((e) => Faixa.carregarDeMapa(e)).toList();
     return faixas;
   }
 

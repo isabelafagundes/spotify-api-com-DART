@@ -7,7 +7,7 @@ class Faixa {
   final Album _album;
   final List<Artista> _artistas;
   final String _id;
-  final List<Imagem> _imagens;
+  final List<Imagem>? _imagens;
   final String? _uri;
 
   Faixa(
@@ -24,7 +24,7 @@ class Faixa {
     Album album,
     List<Artista> artistas,
     String id,
-    List<Imagem> imagens,
+    List<Imagem>? imagens,
     String? uri,
   ) {
     return Faixa(
@@ -39,7 +39,7 @@ class Faixa {
 
   String? get uri => _uri;
 
-  List<Imagem> get imagens => _imagens;
+  List<Imagem>? get imagens => _imagens;
 
   String get id => _id;
 
@@ -53,10 +53,10 @@ class Faixa {
     return {
       "id": _id,
       "nome": _nome,
-      "imagens": _imagens.map((e) => e.paraMapa()),
+      "imagens": _imagens != null ? _imagens!.map((e) => e.paraMapa()).toList() : null,
       "album": _album.paraMapa(),
       "uri": _uri,
-      "artistas": _artistas.map((e) => e.paraMapa()),
+      "artistas": _artistas.map((e) => e.paraMapa()).toList(),
     };
   }
 
@@ -66,7 +66,9 @@ class Faixa {
       Album.carregarDeMapa(faixaAsMap['album']),
       (faixaAsMap['artists'] as List).map((e) => Artista.carregarDeMapa(e)).toList(),
       faixaAsMap['id'],
-      (faixaAsMap['images'] as List).map((e) => Imagem.carregarDeMapa(e)).toList(),
+      faixaAsMap['images'] != null
+          ? (faixaAsMap['images'] as List).map((e) => Imagem.carregarDeMapa(e)).toList()
+          : null,
       faixaAsMap['uri'],
     );
   }

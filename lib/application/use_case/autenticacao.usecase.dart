@@ -1,3 +1,4 @@
+import 'package:logging/logging.dart';
 import 'package:shelf/shelf.dart';
 import 'package:spotify_api_repo/application/service/autenticacao.service.dart';
 import 'package:spotify_api_repo/infrastructure/service/log.service.dart';

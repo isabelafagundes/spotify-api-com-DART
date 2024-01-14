@@ -1,8 +1,19 @@
+import 'dart:convert';
+
+import 'package:logging/logging.dart';
+import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart' as shelf;
+import 'package:shelf_router/shelf_router.dart';
 import 'package:shelf_cors_headers/shelf_cors_headers.dart' as cors;
+import 'package:spotify_api_repo/application/component/autenticacao.component.dart';
+import 'package:spotify_api_repo/application/component/usuario.component.dart';
+import 'package:spotify_api_repo/domain/faixa.dart';
 import 'package:spotify_api_repo/domain/header/header.dart';
+import 'package:spotify_api_repo/domain/usuario.dart';
+import 'package:spotify_api_repo/infrastructure/service/autenticacao_spotify.service.dart';
 import 'package:spotify_api_repo/infrastructure/service/log.service.dart';
+import 'package:spotify_api_repo/infrastructure/service/usuario_spotify.service.dart';
 import 'package:spotify_api_repo/infrastructure/utils/texto.util.dart';
 import 'package:spotify_api_repo/interface/server/rotas.dart';
 
