@@ -20,4 +20,3 @@ Certifique-se de ter o Dart SDK instalado em sua máquina.
 #
 
 Aproveite o uso da API do Spotify com Dart! 🎶
->>>>>>> 811e04a9f6fd9eaf6629f6368ee50bd25b383263
