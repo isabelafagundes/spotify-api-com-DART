@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
-=======
 # Spotify API com DART
 Este projeto consiste na criação de um servidor utilizando o pacote shelf da linguagem Dart. O servidor interage com a API do Spotify, permitindo aos usuários realizar o login no Spotify para obter informações do perfil e suas principais faixas.
 
