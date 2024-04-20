@@ -13,7 +13,7 @@ Navegue até o diretório do projeto: cd nome_do_seu_projeto
 
 Instale as dependências: dart pub get
 
-Execute o servidor: dart run server.dart
+Execute o servidor: dart run main.dart
 
 Certifique-se de ter o Dart SDK instalado em sua máquina.
 
